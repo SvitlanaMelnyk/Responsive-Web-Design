@@ -1,0 +1,253 @@
+/*
+TP 2
+	Thématique : Un site Web adaptatif à l’aide de Flexbox
+	Auteur : Melnyk Svitlana
+	Date : novembre 2017
+*/
+html{
+    background-color: lightyellow;
+}
+body, nav, ul, li, a, form, label, input, h1, h2, h3, header, img, div, main,
+section, article, aside, footer{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+nav {
+    background-color: black;
+    padding: 1em 0;
+}
+nav ul {
+    margin:0 3vw;
+    padding: 0;
+
+    display: flex;
+}
+nav li {
+    padding: 0 2vw 0 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+.search-form {
+    margin-left: auto;
+    padding: 0;
+
+    display: flex;
+}
+form{
+    display: flex;
+    align-items: center;
+}
+label{
+    display: none;
+}
+
+/* Entête de la page */
+header{
+    display: flex;
+}
+
+/* Le corps de la page */
+.vedette {
+    margin:0 3vw;
+    display:flex;
+}
+.principale {
+    width: 100%;
+}
+.action a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #7F7C5B;
+    transition: 0.3s;
+}
+.action a:hover {
+    background-color: #CCC691;
+}
+.intro{
+    margin: 1em 0 3em 0;
+}
+.intro h3 {
+    border-bottom: 2px solid black;
+}
+.evenements h3 {
+    border-bottom: 2px solid black;
+}
+
+/* Les articles*/
+.spotlight {
+    display: flex;
+}
+.recent {
+    margin: 1em 3vw 0 3vw;
+    border: 1px solid black;
+    text-align: center;
+}
+.recent h2 {
+    background-color: #7F7C5B;
+    margin: 0;
+}
+.img-wrap img {
+    width: 100%;
+}
+.recent h3 {
+    margin: 0;
+}
+.call a {
+    background-color: #7F7C5B;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.call a:hover {
+    background-color: #CCC691;
+}
+
+/* Pied de la page */
+footer{
+    background-color: black;
+    color: white;
+    margin-top: 1em;
+    padding-top: 1em;
+
+}
+footer ul {
+    padding: 0;
+    margin: 0 3vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+footer li{
+    list-style: none;
+    min-width: 50px;
+    text-align: center;
+}
+footer p{
+    text-align: center;
+}
+
+
+/*   styles mobile  */
+@media screen and (max-width: 575px) {
+    body, nav, .intro{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigation */
+    nav{
+        margin: 0 6vw;
+        order: 1;
+    }
+    nav ul {
+        margin: auto;
+        flex-direction: column;
+    }
+    nav li{
+        width: 100%;
+        border-bottom: 1px solid white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a{
+        padding: 1em;
+    }
+    .search-form{
+        padding-bottom: 0.5em;
+        background-color: lightyellow;
+        align-self: center;
+        order: -1;
+    }
+
+    /* Entête de la page */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Le corps de la page */
+    .vedette{
+        flex-direction: column;
+    }
+    .principale {
+        width: 100%;
+    }
+    aside h2, aside h3{
+        text-align: center;
+    }
+
+    /* Les articles*/
+    .spotlight{
+        margin-bottom: 2em;
+        flex-direction: column;
+    }
+    .img-wrap img {
+        width: 100%;
+    }
+
+    /* Pied de la page */
+    footer {
+        order: 2;
+    }
+}
+
+
+/* styles desktop */
+@media screen and (min-width: 576px){
+    body{
+        width: 100%;
+    }
+
+    /* Navigation */
+    nav ul{
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* Entête de la page */
+    header {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Le corps de la page */
+    .vedette{
+        flex-flow: row-reverse wrap;
+    }
+    .vedette article {
+        min-width: 500px;
+        margin-left: auto;
+        flex: 1 0 500px;
+    }
+    .vedette aside {
+        flex: 1 1 150px;
+        margin-right: 2em;
+    }
+
+    /* Les articles*/
+    .spotlight{
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .recent{
+        flex: 1 0 315px;
+    }
+}
